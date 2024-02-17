@@ -1,31 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './componentes/navbar';
-import Formulario from './componentes/Formulario';
+import AgendarCita from './componentes/AgendarCita';
+import VerCita from './componentes/VerCita';
 
 function App() {
   return (
     <div className="App text-center">
-      <Navbar></Navbar>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Formulario></Formulario>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div className="flex items-start"> {/* Agregar margen superior a los componentes */}
+        <div className=" w-1/2"> {/* Establecer ancho del 50% y margen derecho */}
+          <AgendarCita />
+        </div>
+        <div className="w-1/2"> {/* Establecer ancho del 50% y margen izquierdo */}
+          <VerCita />
+        </div>
+      </div>
     </div>
   );
 }
-
-
 
 export default App;
