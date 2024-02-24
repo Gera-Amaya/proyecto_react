@@ -1,10 +1,10 @@
 import React from "react";
-import calendarioIcono from '../assets/icons/buscar.png';
+import precioIcono from '../assets/icons/etiqueta-de-precio.png';
 
-function VerCita() {
+function Ofertas() {
     return (
         <div className="flex justify-center items-center mb-2">
-        <form className="bg-slate-400 shadow-md rounded px-8 pt-6 pb-8">
+        <form className="bg-slate-400 shadow-md rounded px-11 pt-6 pb-8">
             <div className="mb-4">
             {/* Aquí puedes agregar otros elementos del AgendarCita si es necesario */}
             </div>
@@ -14,12 +14,12 @@ function VerCita() {
                 type="button"
             >
                 <img
-                    src={calendarioIcono}
+                    src={precioIcono}
                     alt="Calendario"
                     className="w-12 h-12 mr-1"
                 />
     
-                Ver mi cita
+                Ofertas
             </button>
             </div>
         </form>
@@ -27,4 +27,4 @@ function VerCita() {
     );
     }
 
-    export default VerCita;
+    export default Ofertas;
