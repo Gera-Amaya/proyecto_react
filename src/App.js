@@ -1,34 +1,26 @@
-import "./App.css";
-import Navbar from "./componentes/navbar";
-import AgendarCita from "./componentes/AgendarCita";
-import VerCita from "./componentes/VerCita";
-import Localizacion from "./componentes/localizacion";
-import Footer from "./componentes/Footer";
-import Ofertas from "./componentes/Ofertas";
-import Conocenos from "./componentes/Conocenos";
+import React from "react";
+import HomePage from "./pages/HomePages";
+import CrearCita from "./pages/CrearCita"
+import VistaCitas from "./pages/VistaCitas";
+import VerOfertas from "./pages/VerOfertas";
+import Nosotros from "./pages/Nosotros";
 
-function App() {
-  return (
-    <div className="App text-center bg-slate-700">
-      <Navbar />
-      <div className="flex flex-col items-center justify-center mt-8">
-        {" "}
-        {/* Agregar margen superior a los componentes */}
-        <div className="w-full m-0">
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
-            <div className="h-32 rounded-lg"><AgendarCita/></div>
-            <div className="h-32 rounded-lg"><VerCita/></div>
-            <div className="h-32 rounded-lg"><Ofertas/></div>
-            <div className="h-32 rounded-lg"><Conocenos/></div>
-          </div>
-        </div>
-        <div className="flex items-center">
-          <Localizacion />
-        </div>
-      </div>
-      <Footer/>
-    </div>
-  );
+
+import {BrowserRouter, Route, Routes } from 'react-router-dom';
+
+
+function App(){
+  return(
+    <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/cita" element={<CrearCita />} />
+      <Route path="/ofertas" element={<VerOfertas />} />
+      <Route path="/ver_cita" element={<VistaCitas />} />
+      <Route path="/conocenos" element={<Nosotros />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
