@@ -8,8 +8,9 @@ function Localizacion() {
         loading="lazy"
         allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed/v1/place?key=&q=Space+Needle,Seattle+WA"
+        src="https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDj8XvUPrqysYN3Byj-ZsdCqfrWeRzGcWs"
       ></iframe>
+      
     </div>
   );
 }

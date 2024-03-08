@@ -3,19 +3,19 @@ import React from 'react';
 function Navbar() {
 return (
     <div>
-        <nav className="bg-gray-800 p-4">
-            <ul className="flex flex-wrap justify-start">
+        <nav className="bg-customB p-4">
+            <ul className="flex flex-wrap justify-start text-customA text-lg">
                 <li className="mr-4">
-                <a href="/" className="text-white hover:text-gray-300">Inicio</a>
+                <a href="/" className=" hover:text-customE transition-all">Inicio</a>
                 </li>
                 <li className="mr-4">
-                <a href="/conocenos" className="text-white hover:text-gray-300">Acerca de</a>
+                <a href="/conocenos" className=" hover:text-customE transition-all">Acerca de</a>
                 </li>
                 <li className="mr-4">
-                <a href="/servicios" className="text-white hover:text-gray-300">Servicios</a>
+                <a href="/servicios" className=" hover:text-customE transition-all">Servicios</a>
                 </li>
                 <li>
-                <a href="/nosotros" className="text-white hover:text-gray-300">Contacto</a>
+                <a href="/nosotros" className=" hover:text-customE transition-all">Contacto</a>
                 </li>
             </ul>
         </nav>
