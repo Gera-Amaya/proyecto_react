@@ -10,10 +10,11 @@ function AppointmentPage() {
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
   const [time, setTime] = useState("");
+  const [message, setMessage] = useState(""); // Nuevo estado para el mensaje
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const payload = {
       name: name,
       email: email,
@@ -22,7 +23,7 @@ function AppointmentPage() {
       time: time,
       service: service
     };
-
+  
     try {
       const response = await fetch('http://localhost:3001/appointments', {
         method: 'POST',
@@ -34,6 +35,14 @@ function AppointmentPage() {
       
       if (response.ok) {
         console.log("Datos del formulario enviados correctamente");
+        setMessage("La cita se ha creado con éxito."); // Actualiza el mensaje de éxito
+        // Resetear los estados de los campos del formulario
+        setName('');
+        setDate('');
+        setEmail('');
+        setPhone('');
+        setService('');
+        setTime('');
         // Realizar alguna acción adicional aquí después de enviar los datos
       } else {
         console.error("Error al enviar los datos del formulario:", response.statusText);
@@ -47,10 +56,14 @@ function AppointmentPage() {
     <div className="App text-start bg-customD">
       <Navbar />
       <div className="flex justify-center items-start">
-        <form
+      <div className="message-container">
+        {message && <p className={`text-customA ${message && 'fade-in'}`}>{message}</p>}
+      </div>
+      <form
           className="bg-customB shadow-md rounded mt-16 px-6 pt-6 pb-8 mb-8 w-full max-w-lg"
           onSubmit={handleSubmit}
         >
+          
           <div className="mb-4">
             <label
               className="block text-customA text-sm font-bold mb-2"
@@ -65,6 +78,7 @@ function AppointmentPage() {
               placeholder="Nombre"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -81,6 +95,7 @@ function AppointmentPage() {
               placeholder="Correo electrónico"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -97,6 +112,7 @@ function AppointmentPage() {
               placeholder="Teléfono"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -113,6 +129,7 @@ function AppointmentPage() {
               placeholder="Fecha"
               value={date}
               onChange={(e) => setDate(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -129,6 +146,7 @@ function AppointmentPage() {
               placeholder="Hora"
               value={time}
               onChange={(e) => setTime(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -143,6 +161,7 @@ function AppointmentPage() {
               id="service"
               value={service}
               onChange={(e) => setService(e.target.value)}
+              required
             >
               <option value="">Seleccionar servicio</option>
               <option value="Corte de cabello">Corte de cabello</option>

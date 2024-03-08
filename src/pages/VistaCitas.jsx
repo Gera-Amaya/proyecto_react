@@ -55,7 +55,7 @@ function VerCitas() {
                                 <p className="text-gray-700 mb-2">phone: {cita.phone}</p>
                                 <p className="text-gray-700 mb-2">time: {cita.time}</p>
                                 <p className="text-gray-700 mb-2">service: {cita.service}</p>
-                                <button onClick={() => handleDeleteAppointment(cita.id)}>Eliminar</button>
+                                <button className='bg-customC hover:text-customE text-customA font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline flex items-center justify-center al transition-all' onClick={() => handleDeleteAppointment(cita.id)}>Eliminar</button>
                             </div>
                         ))}
                     </div>
